@@ -46,7 +46,8 @@
   "homepage": "https://github.com/RaftDigiAI/yandex-cloud-monitoring-metrics#readme",
   "dependencies": {
     "@yandex-cloud/nodejs-sdk": "^2.4.4",
-    "axios": "^1.4.0"
+    "axios": "^1.4.0",
+    "axios-retry": "^3.5.1"
   },
   "devDependencies": {
     "@ryansonshine/commitizen": "^4.2.8",

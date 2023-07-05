@@ -6,10 +6,10 @@ API doc https://cloud.yandex.com/en/docs/monitoring/operations/metric/add.
 
 ## Supported metric types
 
-1. DGAUGE Numeric value (decimal). It shows the metric value at a certain point in time. For example, the amount of used RAM.
-2. GAUGE Numeric value (integer). It shows the metric value at a certain point in time.
-3. COUNTER Counter. It shows the metric value that increases over time. For example, the number of days of service continuous running.
-4. RATE Derivative value. It shows the change in the metric value over time. For example, the number of requests per second.
+1. DGAUGE: shows the metric value at a certain point in time. For example, the amount of used RAM.
+2. GAUGE: shows the metric value at a certain point in time.
+3. COUNTER: shows the metric value that increases over time. For example, the number of days of service continuous running.
+4. RATE: shows the change in the metric value over time. For example, the number of requests per second.
 
 ## Getting started
 
