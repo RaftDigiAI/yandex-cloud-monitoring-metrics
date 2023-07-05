@@ -45,6 +45,13 @@ export class YandexCloudMonitoringMetricsLogger
     this.iamToken = token.iamToken;
   }
 
+  private getFailedToRefreshTokenResponse(): IYandexMetricResponse {
+    return {
+      writtenMetricsCount: 0,
+      error: 'Failed to refresh IAM token',
+    };
+  }
+
   async writeMetrics(
     metrics: IYandexMetricRequest
   ): Promise<IYandexMetricResponse> {
@@ -52,10 +59,7 @@ export class YandexCloudMonitoringMetricsLogger
       if (!this.iamToken) {
         await this.refreshToken();
         if (!this.iamToken) {
-          return {
-            writtenMetricsCount: 0,
-            error: 'Failed to refresh token',
-          };
+          return this.getFailedToRefreshTokenResponse();
         }
       }
 
@@ -83,10 +87,7 @@ export class YandexCloudMonitoringMetricsLogger
       if (response.status === 401) {
         await this.refreshToken();
         if (!this.iamToken) {
-          return {
-            writtenMetricsCount: 0,
-            error: 'Failed to refresh token',
-          };
+          return this.getFailedToRefreshTokenResponse();
         }
 
         return await this.writeMetrics(metrics);
@@ -100,10 +101,7 @@ export class YandexCloudMonitoringMetricsLogger
       if ((error as AxiosError).response?.status === 401) {
         await this.refreshToken();
         if (!this.iamToken) {
-          return {
-            writtenMetricsCount: 0,
-            error: 'Failed to refresh token',
-          };
+          return this.getFailedToRefreshTokenResponse();
         }
 
         return await this.writeMetrics(metrics);
