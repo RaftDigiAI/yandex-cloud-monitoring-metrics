@@ -5,16 +5,16 @@ API doc https://cloud.yandex.com/en/docs/monitoring/operations/metric/add.
 
 ## Supported metric types
 
-DGAUGE Numeric value (decimal). It shows the metric value at a certain point in time. For example, the amount of used RAM.
-GAUGE Numeric value (integer). It shows the metric value at a certain point in time.
-COUNTER Counter. It shows the metric value that increases over time. For example, the number of days of service continuous running.
-RATE Derivative value. It shows the change in the metric value over time. For example, the number of requests per second.
+1. DGAUGE Numeric value (decimal). It shows the metric value at a certain point in time. For example, the amount of used RAM.
+2. GAUGE Numeric value (integer). It shows the metric value at a certain point in time.
+3. COUNTER Counter. It shows the metric value that increases over time. For example, the number of days of service continuous running.
+4. RATE Derivative value. It shows the change in the metric value over time. For example, the number of requests per second.
 
 ## Getting started
 
 1. Get the ID of the folder for which you are granted the monitoring.editor role or a higher role (https://cloud.yandex.com/en/docs/resource-manager/operations/folder/get-id)
-2. Create service account https://cloud.yandex.com/en-ru/docs/iam/concepts/users/service-accounts
-3. Store service account ID, access key ID and private key
+2. Create a service account https://cloud.yandex.com/en-ru/docs/iam/concepts/users/service-accounts with monitoring.writer permission
+3. Store the service account ID, access key ID and private key
 
 ## Install
 
