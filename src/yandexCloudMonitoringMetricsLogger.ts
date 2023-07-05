@@ -1,6 +1,12 @@
 import { Session, serviceClients } from '@yandex-cloud/nodejs-sdk';
 import axios, { AxiosError } from 'axios';
+import axiosRetry from 'axios-retry';
 import { IYandexMetricRequest, IYandexMetricResponse } from './types';
+
+const MAX_RETRIES = 3;
+axiosRetry(axios, {
+  retries: MAX_RETRIES,
+});
 
 export interface IYandexCloudMonitoringMetricsLogger {
   writeMetrics(metrics: IYandexMetricRequest): Promise<IYandexMetricResponse>;
